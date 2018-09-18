@@ -1,27 +1,27 @@
 {
-  "_from": "cordova-plugin-camera@4.0.3",
-  "_id": "cordova-plugin-camera@4.0.3",
+  "_from": "cordova-plugin-camera@3.0.0",
+  "_id": "cordova-plugin-camera@3.0.0",
   "_inBundle": false,
-  "_integrity": "sha1-c3Olk4MYyGzP2E43E+I4LRD+B2s=",
+  "_integrity": "sha1-khL/DiohHuhA2Kg/BR030N7AvR8=",
   "_location": "/cordova-plugin-camera",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-camera@4.0.3",
+    "raw": "cordova-plugin-camera@3.0.0",
     "name": "cordova-plugin-camera",
     "escapedName": "cordova-plugin-camera",
-    "rawSpec": "4.0.3",
+    "rawSpec": "3.0.0",
     "saveSpec": null,
-    "fetchSpec": "4.0.3"
+    "fetchSpec": "3.0.0"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-camera/-/cordova-plugin-camera-4.0.3.tgz",
-  "_shasum": "7373a5938318c86ccfd84e3713e2382d10fe076b",
-  "_spec": "cordova-plugin-camera@4.0.3",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-camera/-/cordova-plugin-camera-3.0.0.tgz",
+  "_shasum": "9212ff0e2a211ee840d8a83f051d37d0dec0bd1f",
+  "_spec": "cordova-plugin-camera@3.0.0",
   "_where": "I:\\ionic\\git\\themosTestMobileApp",
   "author": {
     "name": "Apache Software Foundation"
@@ -33,8 +33,15 @@
   "cordova": {
     "id": "cordova-plugin-camera",
     "platforms": [
+      "firefoxos",
       "android",
+      "amazon-fireos",
+      "ubuntu",
       "ios",
+      "blackberry10",
+      "wp7",
+      "wp8",
+      "windows8",
       "browser",
       "windows",
       "osx"
@@ -59,7 +66,7 @@
       "3.0.0": {
         "cordova-android": ">=6.3.0"
       },
-      "5.0.0": {
+      "4.0.0": {
         "cordova": ">100"
       }
     }
@@ -69,8 +76,15 @@
     "cordova",
     "camera",
     "ecosystem:cordova",
+    "cordova-firefoxos",
     "cordova-android",
+    "cordova-amazon-fireos",
+    "cordova-ubuntu",
     "cordova-ios",
+    "cordova-blackberry10",
+    "cordova-wp7",
+    "cordova-wp8",
+    "cordova-windows8",
     "cordova-browser",
     "cordova-windows",
     "cordova-osx"
@@ -88,5 +102,5 @@
     "test": "npm run eslint"
   },
   "types": "./types/index.d.ts",
-  "version": "4.0.3"
+  "version": "3.0.0"
 }
