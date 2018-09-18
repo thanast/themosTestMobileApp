@@ -20,4 +20,5 @@
     <engine name="browser" spec="~5.0.4" />
     <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <plugin name="org.apache.cordova.geolocation" spec="^0.3.6" />
+    <plugin name="Contacts" value="org.apache.cordova.ContactManager" />
 </widget>
