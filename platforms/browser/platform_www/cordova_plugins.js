@@ -136,7 +136,7 @@ module.exports.metadata =
     "cordova-plugin-contacts": "3.0.1",
     "org.apache.cordova.geolocation": "0.3.6",
     "phonegap-plugin-barcodescanner": "8.0.0",
-    "cordova-plugin-camera": "3.0.0"
+    "cordova-plugin-camera": "4.0.3"
 }
 // BOTTOM OF METADATA
 });
