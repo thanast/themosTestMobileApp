@@ -20,5 +20,14 @@
     <engine name="browser" spec="~5.0.4" />
     <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <plugin name="org.apache.cordova.geolocation" spec="^0.3.6" />
-    <plugin name="org.apache.cordova.ContactManager" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+    </plugin>
+    
+    <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+</config-file>
 </widget>
