@@ -1,28 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns       = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "gr.infokey.employeedirectory"
-        versionCode = "10"
-        version     = "1.1.0">
- 
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="gr.infokey.employeedirectory" version="1.1.0" versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+	
+	<supports-screens
+         android:largeScreens="true"
+         android:normalScreens="true"
+         android:smallScreens="true"
+         android:resizeable="true"
+         android:anyDensity="true"
+         />
+	  <uses-permission android:name="android.permission.CAMERA" />
+	  <uses-permission android:name="android.permission.VIBRATE" />
+	  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	  <uses-permission android:name="android.permission.INTERNET" />
+	  <uses-permission android:name="android.permission.RECEIVE_SMS" />
+	  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	  <uses-permission android:name="android.permission.READ_CONTACTS" />
+	  <uses-permission android:name="android.permission.WRITE_CONTACTS" />   
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+	  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <name>Employee Directory</name>
- 
     <description>
         A simple employee directory application
     </description>
- 
-    <author href="http://infokey.gr" email="thanast@infokey.gr">
+    <author email="thanast@infokey.gr" href="http://infokey.gr">
         Themistoklis Anastasopoulos
     </author>
- 
-    <feature name="http://api.phonegap.com/1.0/camera"/>
-    <feature name="http://api.phonegap.com/1.0/contacts"/>
-    <feature name="http://api.phonegap.com/1.0/file"/>
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
-    <feature name="http://api.phonegap.com/1.0/media"/>
-    <feature name="http://api.phonegap.com/1.0/network"/>
-    <feature name="http://api.phonegap.com/1.0/notification"/>
- 
- 		<content src="index.html" />
+    <content src="index.html" />
     <access origin="*" />
+    <engine name="android" spec="~7.0.0" />
+    <engine name="browser" spec="~5.0.4" />
+    <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
 </widget>

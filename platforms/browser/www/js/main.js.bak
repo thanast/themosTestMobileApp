@@ -1,18 +1,5 @@
 var app = {
 
-    findByName: function() {
-        console.log('findByName');
-        this.store.findByName($('.search-key').val(), function(employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i=0; i<l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
-        });
-    },
-
 		showAlert: function (message, title) {
 		    if (navigator.notification) {
 		        navigator.notification.alert(message, null, title, 'OK');
@@ -21,14 +8,47 @@ var app = {
 		    }
 		},
 		
+		
+		 registerEvents: function() {
+        $(window).on('hashchange', $.proxy(this.route, this));
+        $('body').on('mousedown', 'a', function(event) {
+            $(event.target).addClass('tappable-active');
+        });
+        $('body').on('mouseup', 'a', function(event) {
+            $(event.target).removeClass('tappable-active');
+        });
+    },
+
+    route: function() {
+        var hash = window.location.hash;
+        if (!hash) {
+        	var aHomeView = new HomeView(this.store);
+            $('body').html(aHomeView.render().el);
+            aHomeView.findByName();
+            return;
+        }
+        var match = hash.match(app.detailsURL);
+        if (match) {
+            this.store.findById(Number(match[1]), function(employee) {
+                $('body').html(new EmployeeView(employee).render().el);
+            });
+        }
+    },
+
     initialize: function() {
     		var self = this;
+    		this.detailsURL = /^#employees\/(\d{1,})/;
+    		this.registerEvents();
         this.store = new MemoryStore(function() {
-            self.showAlert('Store Initialized', 'Info');
-        });      
-        $('.search-key').on('keyup', $.proxy(this.findByName, this));
-        this.findByName();
-        //this.showAlert('Store Initialized', 'Info');
+            self.route();
+        });   
+        
+        
+				document.addEventListener("deviceready", onDeviceReady, false);
+					function onDeviceReady() {
+						this.showAlert('Device is ready!');
+						console.log(navigator.contacts);
+				}          
     }
 
 };

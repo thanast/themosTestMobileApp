@@ -1,0 +1,18 @@
+{
+  "name": "gr.infokey.employeedirectory",
+  "version": "1.1.0",
+  "displayName": "Employee Directory",
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-contacts": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "~7.0.0",
+    "cordova-plugin-contacts": "^3.0.1"
+  }
+}
