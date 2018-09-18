@@ -7,13 +7,13 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "gr.infokey.employeedirectory"
+    },
     "cordova-plugin-contacts": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
     },
     "org.apache.cordova.geolocation": {
-      "PACKAGE_NAME": "gr.infokey.employeedirectory"
-    },
-    "cordova-plugin-camera": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
     },
     "phonegap-plugin-barcodescanner": {
