@@ -8,11 +8,13 @@
       "browser"
     ],
     "plugins": {
-      "cordova-plugin-contacts": {}
+      "cordova-plugin-contacts": {},
+      "org.apache.cordova.geolocation": {}
     }
   },
   "dependencies": {
     "cordova-android": "~7.0.0",
-    "cordova-plugin-contacts": "^3.0.1"
+    "cordova-plugin-contacts": "^3.0.1",
+    "org.apache.cordova.geolocation": "^0.3.6"
   }
 }

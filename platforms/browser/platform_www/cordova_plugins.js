@@ -89,7 +89,8 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-contacts": "3.0.1"
+    "cordova-plugin-contacts": "3.0.1",
+    "org.apache.cordova.geolocation": "0.3.6"
 }
 // BOTTOM OF METADATA
 });
