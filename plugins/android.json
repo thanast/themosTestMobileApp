@@ -15,6 +15,10 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "gr.infokey.employeedirectory"
     }
   },
   "dependent_plugins": {}

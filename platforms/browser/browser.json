@@ -4,10 +4,34 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"browser-package\" value=\"Camera\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BarcodeScanner\"><param name=\"browser-package\" value=\"BarcodeScanner\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
     "installed_plugins": {
         "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "gr.infokey.employeedirectory"
+        },
+        "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "gr.infokey.employeedirectory"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "gr.infokey.employeedirectory"
+        },
+        "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "gr.infokey.employeedirectory"
         }
     },
@@ -97,9 +121,56 @@
             "merges": [
                 "navigator.contacts"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "id": "cordova-plugin-camera.Camera",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "Camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "CameraPopoverOptions"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "id": "cordova-plugin-camera.camera",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "navigator.camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
+            "id": "cordova-plugin-camera.CameraProxy",
+            "pluginId": "cordova-plugin-camera",
+            "runs": true
+        },
+        {
+            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+            "pluginId": "phonegap-plugin-barcodescanner",
+            "clobbers": [
+                "cordova.plugins.barcodeScanner"
+            ]
+        },
+        {
+            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
+            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
+            "pluginId": "phonegap-plugin-barcodescanner",
+            "runs": true
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-contacts": "3.0.1"
+        "cordova-plugin-contacts": "3.0.1",
+        "org.apache.cordova.geolocation": "0.3.6",
+        "cordova-plugin-camera": "4.0.3",
+        "phonegap-plugin-barcodescanner": "8.0.0"
     }
 }

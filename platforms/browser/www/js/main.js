@@ -42,7 +42,8 @@ var app = {
     		this.registerEvents();
         this.store = new MemoryStore(function() {
             self.route();
-        });                             
+        });         
+                                           
     }
 
 };
