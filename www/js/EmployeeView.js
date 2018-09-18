@@ -26,7 +26,7 @@ var EmployeeView = function(employee) {
 		};
 		
 		this.addToContacts = function(event) {
-			 cordova.plugins.barcodeScanner.scan(
+			 /*cordova.plugins.barcodeScanner.scan(
 		      function (result) {
 		      	app.showAlert("We got a barcode\n" +
 		                "Result: " + result.text + "\n" +
@@ -50,8 +50,7 @@ var EmployeeView = function(employee) {
 		          disableSuccessBeep: false, // iOS and Android
 		          continuousMode: false // Android
 		      }
-		   );
-			/*
+		   );*/			
     		event.preventDefault();
 		    console.log('addToContacts');
 		    if (!navigator.contacts) {
@@ -64,7 +63,7 @@ var EmployeeView = function(employee) {
 		    phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
 		    phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true); // preferred number
 		    contact.phoneNumbers = phoneNumbers;
-		    contact.save();*/
+		    contact.save();
 		    return false;
 		};
 		

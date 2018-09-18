@@ -35,7 +35,6 @@ var EmployeeView = function(employee) {
 		      },
 		      function (error) {
 		          app.showAlert("Scanning failed: " + error);
-		          return;
 		      },
 		      {
 		          preferFrontCamera : true, // iOS and Android

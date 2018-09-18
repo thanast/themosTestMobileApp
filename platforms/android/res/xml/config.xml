@@ -27,4 +27,5 @@
         <uses-feature android:name="android.hardware.camera.autofocus" />
     </config-file>
     <preference name="loglevel" value="DEBUG" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>

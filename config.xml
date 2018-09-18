@@ -23,13 +23,7 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="org.apache.cordova.geolocation" spec="^0.3.6" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0">
-        <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.+" />
-    </plugin>
-    <config-file mode="merge" parent="/*" target="AndroidManifest.xml">
-        <uses-permission android:name="android.permission.CAMERA" />
-        <uses-feature android:name="android.hardware.camera" />
-        <uses-feature android:name="android.hardware.camera.autofocus" />
-    </config-file>
-    
-    
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+    </plugin>    
+        
 </widget>
