@@ -5,6 +5,8 @@ var EmployeeView = function(employee) {
         this.el.on('click', '.add-location-btn', this.addLocation);
         this.el.on('click', '.add-contact-btn', this.addToContacts);
         this.el.on('click', '.change-pic-btn', this.changePicture);
+        this.el.on('click', '.add-barcode-bt', this.addBarcode);
+        
     };
 
     this.render = function() {
@@ -25,8 +27,8 @@ var EmployeeView = function(employee) {
 		    return false;
 		};
 		
-		this.addToContacts = function(event) {
-			 /*cordova.plugins.barcodeScanner.scan(
+		this.addBarcode = function(event) {
+			 cordova.plugins.barcodeScanner.scan(
 		      function (result) {
 		      	app.showAlert("We got a barcode\n" +
 		                "Result: " + result.text + "\n" +
@@ -50,7 +52,10 @@ var EmployeeView = function(employee) {
 		          disableSuccessBeep: false, // iOS and Android
 		          continuousMode: false // Android
 		      }
-		   );*/			
+		   );		   		
+		 };
+		 
+		this.addToContacts = function(event) {   
     		event.preventDefault();
 		    console.log('addToContacts');
 		    if (!navigator.contacts) {

@@ -28,6 +28,10 @@ var EmployeeView = function(employee) {
 		};
 		
 		this.addBarcode = function(event) {
+			if (!cordova.plugins.barcodeScanner) {
+		        app.showAlert("BarCode API not supported", "Error");
+		        return;
+		    }
 			 cordova.plugins.barcodeScanner.scan(
 		      function (result) {
 		      	app.showAlert("We got a barcode\n" +
