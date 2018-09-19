@@ -3,8 +3,8 @@ var HomeView = function(store) {
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div/>');
-        this.el.on('keyup', '.search-key', this.findByName);
-        this.findByName();
+        this.el.on('keyup', '.search-key', this.findByName);   
+        this.el.on('click', '.add-barcode-bt1', this.addABarcode);     
     };
 
     this.render = function() {
@@ -18,6 +18,23 @@ var HomeView = function(store) {
         });
     };
 
+		this.addABarcode = function(event) {   
+    		event.preventDefault();
+		    console.log('addABarcode');
+		    /*if (!navigator.contacts) {
+		        app.showAlert("Contacts API not supported", "Error");
+		        return;
+		    }
+		    var contact = navigator.contacts.create();
+		    contact.name = {givenName: employee.firstName, familyName: employee.lastName};
+		    var phoneNumbers = [];
+		    phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
+		    phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true); // preferred number
+		    contact.phoneNumbers = phoneNumbers;
+		    contact.save();*/
+		    return false;
+		};
+		
     this.initialize();
 
 }

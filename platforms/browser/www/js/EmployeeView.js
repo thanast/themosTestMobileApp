@@ -5,8 +5,7 @@ var EmployeeView = function(employee) {
         this.el.on('click', '.add-location-btn', this.addLocation);
         this.el.on('click', '.add-contact-btn', this.addToContacts);
         this.el.on('click', '.change-pic-btn', this.changePicture);
-        this.el.on('click', '.add-barcode-bt', this.addBarcode);
-        
+        this.el.on('click', '.add-barcode-btn', this.addABarcode);        
     };
 
     this.render = function() {
@@ -27,51 +26,30 @@ var EmployeeView = function(employee) {
 		    return false;
 		};
 		
-		this.addBarcode = function(event) {
-			event.preventDefault();
-			 console.log('addBarcode');
-			app.showAlert("Prepare to capture barcode", "Info");
-			if (!cordova.plugins.barcodeScanner) {
-		        app.showAlert("BarCode API not supported", "Error");
+		this.addABarcode = function(event) {
+		    event.preventDefault();
+		    console.log('addABarcode');
+		    
+		    if (!cordova.plugins.barcodeScanner) {
+		        app.showAlert("Barcode API not supported", "Error");
 		        return;
 		    }
+		    
 		    cordova.plugins.barcodeScanner.scan(
 					function (result) {
-						var s = "Result: " + result.text + "<br/>" +
+						var s = "<b><u>Barcode scanner results</u></b><br/>"+
+						"Result: " + result.text + "<br/>" +
 						"Format: " + result.format + "<br/>" +
 						"Cancelled: " + result.cancelled;
-						resultDiv.innerHTML = s;
+						$('.location', this.el).html(s);
 					}, 
 					function (error) {
 						alert("Scanning failed: " + error);
 					}
 			);
-			 /*cordova.plugins.barcodeScanner.scan(
-		      function (result) {
-		      	app.showAlert("We got a barcode\n" +
-		                "Result: " + result.text + "\n" +
-		                "Format: " + result.format + "\n" +
-		                "Cancelled: " + result.cancelled);
-		      },
-		      function (error) {
-		          app.showAlert("Scanning failed: " + error);
-		      },
-		      {
-		          preferFrontCamera : true, // iOS and Android
-		          showFlipCameraButton : true, // iOS and Android
-		          showTorchButton : true, // iOS and Android
-		          torchOn: true, // Android, launch with the torch switched on (if available)
-		          saveHistory: true, // Android, save scan history (default false)
-		          prompt : "Place a barcode inside the scan area", // Android
-		          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-		          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-		          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-		          disableAnimations : true, // iOS
-		          disableSuccessBeep: false, // iOS and Android
-		          continuousMode: false // Android
-		      }
-		   );*/
-		 };
+			return false;
+		};
+					
 		 
 		this.addToContacts = function(event) {   
     		event.preventDefault();

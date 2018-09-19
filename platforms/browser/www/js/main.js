@@ -11,7 +11,6 @@ var app = {
 		
 		 registerEvents: function() {
         $(window).on('hashchange', $.proxy(this.route, this));
-        $(window).on('hashchange', $.proxy(this.route, this));
         $('body').on('mousedown', 'a', function(event) {
             $(event.target).addClass('tappable-active');
         });
@@ -26,6 +25,7 @@ var app = {
         	var aHomeView = new HomeView(this.store);
             $('body').html(aHomeView.render().el);
             aHomeView.findByName();
+            //console.log('route nohash');
             return;
         }
         var match = hash.match(app.detailsURL);
