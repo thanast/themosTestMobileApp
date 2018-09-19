@@ -69,8 +69,8 @@ var EmployeeView = function(employee) {
 		          disableAnimations : true, // iOS
 		          disableSuccessBeep: false, // iOS and Android
 		          continuousMode: false // Android
-		      }*/
-		   );		   		
+		      }
+		   );*/
 		 };
 		 
 		this.addToContacts = function(event) {   

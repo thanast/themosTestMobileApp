@@ -28,12 +28,25 @@ var EmployeeView = function(employee) {
 		};
 		
 		this.addBarcode = function(event) {
+			event.preventDefault();
+			 console.log('addBarcode');
 			app.showAlert("Prepare to capture barcode", "Info");
 			if (!cordova.plugins.barcodeScanner) {
 		        app.showAlert("BarCode API not supported", "Error");
 		        return;
 		    }
-			 cordova.plugins.barcodeScanner.scan(
+		    cordova.plugins.barcodeScanner.scan(
+					function (result) {
+						var s = "Result: " + result.text + "<br/>" +
+						"Format: " + result.format + "<br/>" +
+						"Cancelled: " + result.cancelled;
+						resultDiv.innerHTML = s;
+					}, 
+					function (error) {
+						alert("Scanning failed: " + error);
+					}
+			);
+			 /*cordova.plugins.barcodeScanner.scan(
 		      function (result) {
 		      	app.showAlert("We got a barcode\n" +
 		                "Result: " + result.text + "\n" +
@@ -56,7 +69,7 @@ var EmployeeView = function(employee) {
 		          disableAnimations : true, // iOS
 		          disableSuccessBeep: false, // iOS and Android
 		          continuousMode: false // Android
-		      }
+		      }*/
 		   );		   		
 		 };
 		 
