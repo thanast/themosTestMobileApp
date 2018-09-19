@@ -13,10 +13,10 @@
     "org.apache.cordova.geolocation": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
     },
-    "phonegap-plugin-barcodescanner": {
+    "cordova-plugin-camera": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
     },
-    "cordova-plugin-camera": {
+    "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "gr.infokey.employeedirectory"
     }
   },

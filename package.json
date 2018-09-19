@@ -10,10 +10,10 @@
     "plugins": {
       "cordova-plugin-contacts": {},
       "org.apache.cordova.geolocation": {},
+      "cordova-plugin-camera": {},
       "phonegap-plugin-barcodescanner": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      },
-      "cordova-plugin-camera": {}
+        "ANDROID_SUPPORT_V4_VERSION": "24.1.0"
+      }
     }
   },
   "dependencies": {
